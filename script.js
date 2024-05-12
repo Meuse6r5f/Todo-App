@@ -9,6 +9,15 @@ const downloadbtn = document.getElementById('downloadbtn');
 const taskInput = document.getElementById("task-input");
 const taskForm = document.getElementById("task-form");
 const taskList = document.getElementById("task-list");
+const dot = document.getElementById('dot');
+
+
+window.addEventListener("online", () => {
+  dot.style.color = "green";
+});
+window.addEventListener("offline", () => {
+  dot.style.color = "red";
+});
 
 taskForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -65,3 +74,4 @@ function saveListData() {
 }
 
 showListData();
+

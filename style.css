@@ -27,6 +27,14 @@ body{
 .todo-app h1{
   text-align: center;
 }
+#dot {
+  position: relative;
+  top: -13px;
+  right:-75px;
+  font-weight:bolder;
+  font-size: 35px;
+  color:green;
+}
 form{
   display: flex;
   align-items: center; 
