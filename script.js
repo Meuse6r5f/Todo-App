@@ -1,3 +1,11 @@
+if('serviceWorker' in navigator)
+{
+  navigator.serviceWorker
+    .register('service-worker.js')
+    .then(()=> console.log('Service Worker Registered'))
+}
+const downloadbtn = document.getElementById('downloadbtn');
+
 const taskInput = document.getElementById("task-input");
 const taskForm = document.getElementById("task-form");
 const taskList = document.getElementById("task-list");
@@ -18,7 +26,25 @@ taskForm.addEventListener("submit", (e) => {
   taskInput.value = "";
   saveListData();
 });
-
+let deferredPrompt;
+downloadbtn.style.display= "none";
+window.addEventListener("beforeinstallprompt",(e)=>{
+  e.preventDefault();
+  deferredPrompt = e;
+  downloadbtn.style.display= "block";
+  downloadbtn .addEventListener("click",()=>{
+    downloadbtn.style.display= "none";
+    deferredPrompt.prompt()
+    defferredPrompt.userChoice.then((choiceResult)=>{
+      if(choiceResult.outcome == "accepted"){
+        console.log("App is installing");
+      }else{
+        console.log("User dismissed the install prompt");
+      }
+      deferredPrompt = null;
+    })
+  })
+})
 taskList.addEventListener('click',(e)=>{
   if(e.target.tagName === 'LI'){
     e.target.classList.toggle('checked');
