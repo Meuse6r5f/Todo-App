@@ -50,7 +50,7 @@ input[type="text"]{
   margin-left:20px;
   outline:none;
 }
-.btn{
+ .btn{
   background-color: #632fff;
   border:none; 
   color: white;
@@ -58,7 +58,7 @@ input[type="text"]{
   cursor: pointer;
   border-radius: 15px;
   font-size:1.5rem;
-}
+} 
 .btn:hover{
   background-color: #4b2a9c;
 }
@@ -95,7 +95,49 @@ ul li span{
   color:rgb(227, 120, 26);
   font-size: 2rem;
 }
+.modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
 
+.modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    animation: scale-in 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes scale-in {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+ .button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    background-color: #632fff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+} 
 
 @media only screen and (max-width: 480px) {
   .top {
@@ -133,7 +175,7 @@ input[type="text"]{
   margin: 10px 0;
   outline: none;
 }
-.btn{
+ .btn{ 
   background-color: #632fff;
   border: none; 
   color: white;
@@ -142,7 +184,7 @@ input[type="text"]{
   border-radius: 15px;
   font-size: 1.6rem;
   text-align: center;
-}
+} 
 .btn:hover{
   background-color: #4b2a9c;
 }

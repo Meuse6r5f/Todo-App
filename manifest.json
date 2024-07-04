@@ -11,5 +11,20 @@
       "sizes": "512x512",
       "type": "image/png"
     }
+  ],
+  "shortcuts": [
+    {
+      "name": "Add new task",
+      "short_name": "Add new task",
+      "description": "Shortcut to go directly to the tasks",
+      "url": "/index.html",
+      "icons": [
+        {
+          "src": "fav.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
   ]
 }
